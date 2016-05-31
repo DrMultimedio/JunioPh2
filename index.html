@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Cheers, Love! The Cavalry's Here!</title>
+	<script type="text/javascript" src="funciones.js"></script>
+	<link rel="stylesheet" href="estilos.css">
+</head>
+<body onload="arranque();">
+	<section>
+		<h2>Jugador 1</h2>
+		<div id="logueado1">
+		</div>
+		<div id="deslogueado1">
+			<h3>introduzca su nombre para jugar	</h3>
+
+			<form action="" onsubmit="login1()">
+				<input type="text" name = "nombreuser" id="nombre1">
+				<input type='submit' id='env' value='Login'/>
+			</form>
+		</div>
+		</section>
+	<section>
+		<h2>Jugador 2</h2>
+		<div id="logueado2">
+		</div>
+		<div id="deslogueado2">
+			<h3>introduzca su nombre para jugar	</h3>
+
+					<form action="" onsubmit="login2()"><input type="text" name = "nombreuser" id="nombre2">
+					<input type='submit' id='env' value='Login'/>
+				</form>
+			</div>
+	</section>
+</body>
+</html>
