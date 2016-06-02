@@ -162,23 +162,40 @@ function pintar(evt) {
 	coord = getPosition(evt);
 
 	if(turno == 0){
-		ocupada[coord["x"]][coord["y"]] = "roja";
- 		colocada = true;
+ 		colocada = false;
 
- 		for(var i = 0; i<6 && colocada==true; i++){
-  				alert(i +" " + coord["x"]);
+ 		for(var i = 0; i<6 && colocada==false; i++){
 
  			if(ocupada[coord["x"]][i] == "blanca"){
- 				alert(ocupada[coord["x"]][i]);
 		 		cbx.fillStyle = "red";
  				cbx.fillRect(coord["x"]*40,200-i*40,40,40);
 				ocupada[coord["x"]][i] = "roja";
-				colocada=false; 			
+				colocada=true;
+				turno=1;
+				document.getElementById("fichas_rojas").style.backgroundColor = "#FFFFFF";
+				canvas.removeEventListener('click', pintar);
+
  			}
+ 		}
+ 		if(colocada = false){
+
  		}
 	}
 	else{
+ 		colocada = false;
 
+ 		for(var i = 0; i<6 && colocada==false; i++){
+ 			if(ocupada[coord["x"]][i] == "blanca"){
+		 		cbx.fillStyle = "green";
+ 				cbx.fillRect(coord["x"]*40,200-i*40,40,40);
+				ocupada[coord["x"]][i] = "verde";
+				colocada=true;
+				turno=1;
+				document.getElementById("fichas_verdes").style.backgroundColor = "#FFFFFF";
+				canvas.removeEventListener('click', pintar);
+
+ 			}
+ 		}
 	}
 		
 }
